@@ -28,13 +28,14 @@ int main()
 
     cout << "Enter Bank Account Number :- ";
     cin >> bank_account_number;
+    cin.ignore();
     cout << "Enter Account Holder Name :- ";
-    cin >> bank_holder_name;
+    getline(cin, bank_holder_name);
     cout << "Enter Bank Account Balance :- ";
     cin >> bank_account_balance;
 
     ba.setBankAccount(bank_account_number, bank_holder_name, bank_account_balance);
-    int deposit_amount,withdraw_amount;
+    int deposit_amount, withdraw_amount;
     int choice;
     do {
         cout << endl << "----- Welcome To Bank Of Baroda -----" << endl;
@@ -58,15 +59,17 @@ int main()
             ba.setBankAccount(bank_account_number, bank_holder_name, bank_account_balance);
             cout << "Your Current Balance Is :- " << bank_account_balance << endl;
             break;
-            case 2:
+        case 2:
             cout << "Your Current Balance Is :- " << bank_account_balance << endl;
             cout << "Enter WithDraw Amont :- ";
             cin >> withdraw_amount;
-            withdraw_amount = bank_account_balance - withdraw_amount;
+            bank_account_balance = bank_account_balance - withdraw_amount;
             ba.setBankAccount(bank_account_number, bank_holder_name, bank_account_balance);
             cout << "Your Current Balance Is :- " << bank_account_balance << endl;
+            break;
         case 3:
             cout << endl << "Your Current Balance Is :- " << bank_account_balance << endl;
+            break;
         default:
             break;
         }
