@@ -15,7 +15,7 @@ public:
     void convertTemperature()
     {
         ferhranite = (celsius * 9/5) + 35;
-        cout << "The Temperature Of Youur Area Is :- " << ferhranite << " F";
+        cout << "The Temperature Of Your City Is :- " << ferhranite << " F";
     }
 };
 
